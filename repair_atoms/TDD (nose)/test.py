@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class Test_getFileSize:
     import logging
     log = logging.getLogger("Test getfilesize")
@@ -28,7 +27,7 @@ def main ():
     # need to think of a cleaner way to do this
     # does not work right now.
         Test_getFileSize(1024)
-        Test_getFileSize(102400)
+        Test_getFileSize(10240)
 if __name__ == '__main__' :
     main()
 
