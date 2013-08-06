@@ -27,7 +27,7 @@ try:
 except IOError:
     print "Opening ",args.fix, "failed"       
 if(args.analyze):
-        print (" Running mp4 printMediaInfo amd printAtoms\n")
+        print (" Running mp4 printMediaInfo and printAtoms\n")
 
 if(args.info):
     print (" Running mp4 analyze \n")
