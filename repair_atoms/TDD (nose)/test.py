@@ -1,9 +1,8 @@
 class Test_getFileSize:
     import logging
     log = logging.getLogger("Test getfilesize")
-
     def setUp(self):
-        print " running Setup"
+        print " running Setup",self.testsize
         with open(self.mytestfile, "wb") as out:
             out.seek(self.testsize-1)
             out.write('0')
@@ -21,13 +20,19 @@ class Test_getFileSize:
         os.remove(self.mytestfile)
     def __init__(self,mytestfile="./filetest",testsize=102400):
         ''' Constructor'''
+        print "Running init"
         self.testsize=testsize
         self.mytestfile = mytestfile
-def main ():
+def test_function_gen():
     # need to think of a cleaner way to do this
-    # does not work right now.
-        Test_getFileSize(1024)
-        Test_getFileSize(10240)
+    sizes=(10240,1024,2000000)
+    print "This is the test loop"
+    for size in sizes:
+        foo=Test_getFileSize("./filetests",size)
+        foo.setUp()
+        foo.test_getFileSize()
+        foo.tearDown()
+
 if __name__ == '__main__' :
     main()
 
